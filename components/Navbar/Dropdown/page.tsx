@@ -18,13 +18,13 @@ const Dropdown = ({ data, controls, sticky }: Props) => {
       animate={controls}
       transition={{ delay: 0.1, duration: 0.8 }}
       tabIndex={0}
-      className={`absolute p-4 text-base font-semibold text-blue-900 bg-white border-t-2 w-60 border-blue-950 ${
+      className={`absolute p-4 text-base font-semibold text-blue-900 bg-white border-t-2 w-60 border-blue-950  ${
         sticky ? "mt-3" : null
       }`}
     >
       {data.map((value: string, index: number) => (
         <li className="py-2" key={index}>
-          <a>{value}</a>
+          <a className="hover:text-red-500">{value}</a>
           <hr className="mt-2" />
         </li>
       ))}

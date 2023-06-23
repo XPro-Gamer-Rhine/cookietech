@@ -50,10 +50,7 @@ const DesktopNavbar = () => {
   }, [hover]);
 
   return (
-    <section
-      className="w-full h-[100vh] hidden md:block lg:block xl:block"
-      ref={ref}
-    >
+    <section className="hidden w-full md:block lg:block xl:block" ref={ref}>
       <motion.div
         className={`flex justify-center text-sm text-black bg-white  w-full  ${
           sticky ? "sticky top-0" : null
@@ -84,7 +81,7 @@ const DesktopNavbar = () => {
               >
                 <label
                   tabIndex={0}
-                  className="text-xs font-semibold transition duration-300 lg:text-lg group md:text-sm"
+                  className="text-xs font-semibold transition duration-300 lg:text-lg group md:text-sm hover:text-red-500"
                 >
                   {value[0]}
                   {sticky ? null : (
@@ -104,7 +101,10 @@ const DesktopNavbar = () => {
             ))}
 
             {sticky ? null : (
-              <FontAwesomeIcon icon={faMagnifyingGlass} className="lg:mt-9 md:mt-8" />
+              <FontAwesomeIcon
+                icon={faMagnifyingGlass}
+                className="lg:mt-9 md:mt-8"
+              />
             )}
           </ul>
         </div>
